@@ -1,0 +1,10 @@
+info.menu.load: '&3Loaded &7[&a%d&7]&3 menu files'
+info.plugin.enable: '&3Plugin enabled'
+tips.cmd.help: |
+  help
+  help
+tips.cmd.missing.args: '&7Missing arguments!'
+tips.cmd.error.args: '&7Incorrect arguments![arg:&c%s&7]'
+tips.cmd.menu.open: '&7Opened menu &3%s&7 for player &3%s'
+tips.cmd.console.not.available: '&4Console cannot use this command!'
+tips.cmd.reload: '&3Plugin reloaded!'

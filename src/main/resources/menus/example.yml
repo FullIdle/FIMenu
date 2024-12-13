@@ -1,0 +1,26 @@
+title: '&3Example Menu'
+layout:
+  - '#########'
+  - '#########'
+  - '#########'
+  - '#########'
+  - '#########'
+  - '#########'
+
+button:
+  '#':
+    # 可以用 menu json 指令 获取手上物品的数据(包括NBT)
+    material: STONE
+    name: '&aExample Button'
+    lore:
+      - '&7This is an example button'
+      - '&7Click to open another menu'
+    actions:
+      all:
+        - 'command: say Hello World!'
+        - |-
+          js: var Bukkit = org.bukkit.Bukkit;
+          Bukkit.getServer().broadcastMessage(player.getName() + " clicked the button! kill himself!");
+        - 'op: kill %player_name%'
+        - 'console: msg %player_name% clicked the button!'
+        - 'close'

@@ -1,0 +1,10 @@
+prefix: '§3FI§7Menu§r'
+name: ${project.name}
+main: ${project.group}
+version: ${project.version}
+depend:
+  - PlaceholderAPI
+authors: [ FullIdle ]
+commands:
+  fimenu:
+    aliases: [menu]
