@@ -4,6 +4,8 @@ main: ${project.group}
 version: ${project.version}
 depend:
   - PlaceholderAPI
+  - FICore
+  - NBTAPI
 authors: [ FullIdle ]
 commands:
   fimenu:
