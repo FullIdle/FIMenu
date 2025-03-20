@@ -75,7 +75,7 @@ public class Main extends JavaPlugin {
                 }
                 jarFile.close();
             }
-            LangUtil.loadConfiguration(new File(folder, langTag + ".yml"));
+            LangUtil.init(new File(folder, langTag + ".yml"));
         }
 
         {
@@ -91,7 +91,7 @@ public class Main extends JavaPlugin {
             cache.clear();
             for (MenuConfig menuConfig : parseMenuConfig(folder))
                 cache.put(menuConfig.getFile().getName(), menuConfig);
-            LangUtil.INSTANCE.sendPrefixMsg(Bukkit.getConsoleSender(), "info.menu.load");
+            LangUtil.INSTANCE.sendPrefixMsg(Bukkit.getConsoleSender(), "info.menu.load", cache.size());
         }
     }
 

@@ -15,7 +15,11 @@ import java.util.logging.Level;
 public class LangUtil extends YamlConfiguration {
     public static LangUtil INSTANCE;
 
-    public LangUtil(File file) {
+    public static void init(File file){
+        INSTANCE = new LangUtil(file);
+    }
+
+    private LangUtil(File file) {
         Validate.notNull(file, "File cannot be null");
         try {
             this.load(file);
