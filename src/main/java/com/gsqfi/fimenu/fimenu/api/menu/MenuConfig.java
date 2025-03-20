@@ -1,6 +1,6 @@
 package com.gsqfi.fimenu.fimenu.api.menu;
 
-import com.gsqfi.fimenu.fimenu.api.menu.action.Action;
+import com.gsqfi.fimenu.fimenu.api.menu.action.IAction;
 import com.gsqfi.fimenu.fimenu.api.menu.action.ActionHelper;
 import de.tr7zw.nbtapi.NBT;
 import lombok.Getter;
@@ -158,8 +158,8 @@ public class MenuConfig {
 
         public void executeButtonActions(char id, ClickType clickType, MenuHolder menuHolder) {
             for (String actionText : this.menuConfig.config.getStringList(clickType.getButtonActionsPath(id))) {
-                Action action;
-                if ((action = ActionHelper.parse(actionText)) == null)
+                IAction action;
+                if ((action = ActionHelper.parseAndCreate(actionText)) == null)
                     throw new RuntimeException("gui: " + this.menuConfig.file.getPath() + "| actions: '" + actionText + "' parsing error!");
                 action.execute(menuHolder, this.player);
             }
