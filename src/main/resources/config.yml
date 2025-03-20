@@ -1,2 +1,5 @@
 # en_US zh_CN zh_TW 语言配置
 language: zh_CN
+
+# javascript引擎 (更具自己jdk或或者额外依赖提供的引擎名)
+javascript-engine: JavaScript

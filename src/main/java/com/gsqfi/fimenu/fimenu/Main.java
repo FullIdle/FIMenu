@@ -4,6 +4,7 @@ import com.gsqfi.fimenu.fimenu.api.FakeOpPlayerUtil;
 import com.gsqfi.fimenu.fimenu.api.LangUtil;
 import com.gsqfi.fimenu.fimenu.api.commands.FIMenuCmd;
 import com.gsqfi.fimenu.fimenu.api.menu.MenuConfig;
+import com.gsqfi.fimenu.fimenu.api.menu.action.base.JavaScriptAction;
 import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
@@ -65,7 +66,6 @@ public class Main extends JavaPlugin {
                         String[] split = name.split("/");
                         if (split.length > 1) {
                             String fileName = split[1];
-                            System.out.println(fileName);
                             InputStream stream = this.getClass().getResourceAsStream("/lang/" + fileName);
                             Path path = new File(folder, fileName).toPath();
                             assert stream != null;
@@ -76,6 +76,10 @@ public class Main extends JavaPlugin {
                 jarFile.close();
             }
             LangUtil.init(new File(folder, langTag + ".yml"));
+        }
+
+        {
+            JavaScriptAction.init(config.getString("javascript-engine"));
         }
 
         {

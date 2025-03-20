@@ -38,7 +38,6 @@ dependencies {
     compileOnly 'me.fullidle.ficore:FICore:1.2.6'
 
     implementation 'net.bytebuddy:byte-buddy:1.14.12'
-    implementation 'org.mozilla:rhino:1.7.15'
     compileOnly("de.tr7zw:item-nbt-api-plugin:2.14.0")
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
@@ -63,5 +62,4 @@ shadowJar{
     minimize()
     exclude("net/bytebuddy/agent/**/*")
     relocate("net.bytebuddy", "net.bytebuddy_1_14_12")
-    relocate("org.mozilla", "org.mozilla_1_7_15")
 }
