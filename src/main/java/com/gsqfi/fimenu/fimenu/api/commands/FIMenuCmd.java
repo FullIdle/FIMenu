@@ -7,14 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FIMenuCmd extends AbstractCommandExecutor {
+public final class FIMenuCmd extends AbstractCommandExecutor {
     public static final FIMenuCmd INSTANCE = new FIMenuCmd();
 
-    protected FIMenuCmd() {
+    private FIMenuCmd() {
         super("fimenu", null);
         new HelpCmd(this);
         new OpenCmd(this);
         new ReloadCmd(this);
+        new JsonCmd(this);
     }
 
     @Override

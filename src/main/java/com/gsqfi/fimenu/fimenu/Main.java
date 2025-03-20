@@ -2,9 +2,11 @@ package com.gsqfi.fimenu.fimenu;
 
 import com.gsqfi.fimenu.fimenu.api.FakeOpPlayerUtil;
 import com.gsqfi.fimenu.fimenu.api.LangUtil;
+import com.gsqfi.fimenu.fimenu.api.commands.FIMenuCmd;
 import com.gsqfi.fimenu.fimenu.api.menu.MenuConfig;
 import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,6 +34,10 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         reloadConfig();
+        PluginCommand command = getCommand("fimenu");
+        assert command != null;
+        command.setExecutor(FIMenuCmd.INSTANCE);
+        command.setTabCompleter(FIMenuCmd.INSTANCE);
         LangUtil.INSTANCE.sendPrefixMsg(Bukkit.getConsoleSender(), "info.plugin.enable");
     }
 
