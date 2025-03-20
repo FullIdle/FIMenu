@@ -20,7 +20,7 @@ button:
         - 'command: say Hello World!'
         - |-
           js: var Bukkit = org.bukkit.Bukkit;
-          Bukkit.getServer().broadcastMessage(player.getName() + " clicked the button! kill himself!");
-        - 'op: kill %player_name%'
+          Bukkit.getServer().broadcastMessage(player.getName() + " Hello World!");
+        - 'op: say %player_name% HelloWorld!'
         - 'console: msg %player_name% clicked the button!'
         - 'close'
