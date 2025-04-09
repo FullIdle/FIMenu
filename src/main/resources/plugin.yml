@@ -2,6 +2,7 @@ prefix: '§3FI§7Menu§r'
 name: ${project.name}
 main: ${project.group}
 version: ${project.version}
+api-version: 1.16
 depend:
   - PlaceholderAPI
   - FICore

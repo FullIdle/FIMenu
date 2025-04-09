@@ -58,7 +58,8 @@ public class JavaScriptAction implements IAction {
         Logger logger = Main.INSTANCE.getLogger();
         if (engine == null) {
             logger.warning("JavaScript engine '" + engineName + "' not found, Try using the 'JavaScript'");
-            engine = manager.getEngineByName("JavaScript");
+            if (!manager.getEngineFactories().isEmpty())
+                engine = manager.getEngineFactories().get(0).getScriptEngine();
         }
         if (engine == null) throw new IllegalStateException("JavaScript engine not initialized!");
     }

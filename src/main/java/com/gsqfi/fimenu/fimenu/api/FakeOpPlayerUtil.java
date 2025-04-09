@@ -39,7 +39,7 @@ public class FakeOpPlayerUtil {
         String nmsVersion = SomeMethod.getNmsVersion();
         craftPlayerClass = Class.forName("org.bukkit.craftbukkit." + nmsVersion + ".entity.CraftPlayer");
         craftServerClass = Class.forName("org.bukkit.craftbukkit." + nmsVersion + ".CraftServer");
-        entityPlayerClass = Class.forName("net.minecraft.server." + nmsVersion + ".EntityPlayer");
+        entityPlayerClass = craftPlayerClass.getDeclaredMethod("getHandle").getReturnType();
 
         this.fakeOpPlayerClass = new ByteBuddy()
                 .subclass(craftPlayerClass)

@@ -79,7 +79,11 @@ public class Main extends JavaPlugin {
         }
 
         {
-            JavaScriptAction.init(config.getString("javascript-engine"));
+            try {
+                JavaScriptAction.init(config.getString("javascript-engine"));
+            } catch (Exception e) {
+                this.getLogger().warning(e.getMessage());
+            }
         }
 
         {
